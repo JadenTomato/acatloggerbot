@@ -22,7 +22,7 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         .setDescription("A message from a user was edited")
         .addField("Before", oldMessage.content, true)
         .addField("After", newMessage.content, true)
-        .addField("In channel: ", message.channel)
+        .addField("In channel: ", oldMessage.channel)
         .setTimestamp()
         .setFooter("This is an embed for updating messages");
  
