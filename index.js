@@ -5,6 +5,11 @@ const token="Njg5NDk0ODAyNTMzOTc0MTUz.XnDsIQ.iky-DaDb_jgYUy4YMTLcsKzB22g";
  
 const PREFIX="!";
  
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
+
 bot.on("ready", ()=>{
     console.log("Bot on!");
 })
