@@ -83,6 +83,17 @@ bot.on("message", message=>{
             message.channel.send("List of commands: !setup, !ping, !developer")
     }
 })
+
+//if members leave
+bot.on("guildMemberRemove",member=>{
+    let logChannel=message.guild.channels.cache.find(channel=>channel.name==="text-logs")
+    
+    if(!logChannel){
+        return;
+    }
+
+    logChannel.send(${member}" has left the server.");
+})
  
 bot.login(token);
 
