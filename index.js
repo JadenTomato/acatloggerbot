@@ -92,7 +92,7 @@ bot.on("guildMemberRemove",member=>{
         return;
     }
 
-    logChannel.send(${member}" has left the server.");
+    logChannel.send("${member} has left the server.");
 })
  
 bot.login(token);
