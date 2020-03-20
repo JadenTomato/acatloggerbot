@@ -86,13 +86,19 @@ bot.on("message", message=>{
 
 //if members leave
 bot.on("guildMemberRemove",member=>{
-    let logChannel=message.guild.channels.cache.find(channel=>channel.name==="text-logs")
     
-    if(!logChannel){
+    let loggingEmbed=new Discord.MessageEmbed()
+    .setTitle("Member Left!")
+    .setColor("RANDOM")
+    .setThumbnail(member.avatarURL)
+    .addField("Member: ",`${member} has left`);
+    const leaveChannel=member.guild.channels.cache.find(ch => ch.name === 'text-logs');
+
+    if(!leaveChannel){
         return;
     }
 
-    logChannel.send("${member} has left the server.");
+    leaveChannel.send(loggingEmbed);
 })
  
 bot.login(token);
