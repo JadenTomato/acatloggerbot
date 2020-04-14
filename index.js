@@ -1,7 +1,7 @@
 const Discord=require("discord.js");
 const bot=new Discord.Client();
  
-const token="Njg5NDk0ODAyNTMzOTc0MTUz.XnDsIQ.iky-DaDb_jgYUy4YMTLcsKzB22g";
+const token="Njg5NDk0ODAyNTMzOTc0MTUz.XpVKtQ.tyS-l74eIedygDk0sBcH1oVONdk";
  
 const PREFIX="!";
  
@@ -102,4 +102,3 @@ bot.on("guildMemberRemove",member=>{
 })
  
 bot.login(token);
-
