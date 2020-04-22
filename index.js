@@ -4,7 +4,8 @@ const bot=new Discord.Client();
 const token="Njg5NDk0ODAyNTMzOTc0MTUz.XpVKtQ.tyS-l74eIedygDk0sBcH1oVONdk";
  
 const PREFIX="!";
- 
+var leavemessage="true";
+
 bot.on("ready", ()=>{
     console.log("Bot on!");
 })
@@ -81,12 +82,26 @@ bot.on("message", message=>{
         //commands list message
         case "commands":
             message.channel.send("List of commands: !setup, !ping, !developer")
+        break;
+
+        //help message
+        case "help":
+            message.channel.send("Type !commands for a list of commands. If you are still having trouble, join the support discord.")
+        break;
+        
+        case "disableleavemessage":
+            leavemessage=false;
+            message.channel.send("Leave message disabled")
+            message.channel.send(leavemessage)
+        break;
+
     }
 })
 
 //if members leave
 bot.on("guildMemberRemove",member=>{
-    
+
+
     let loggingEmbed=new Discord.MessageEmbed()
     .setTitle("Member Left!")
     .setColor("RANDOM")
@@ -94,11 +109,14 @@ bot.on("guildMemberRemove",member=>{
     .addField("Member: ",`${member} has left`);
     const leaveChannel=member.guild.channels.cache.find(ch => ch.name === 'text-logs');
 
-    if(!leaveChannel){
+    if(!leaveChannel||leavemessage==false){
         return;
     }
 
+
     leaveChannel.send(loggingEmbed);
+    
+
 })
  
 bot.login(token);
