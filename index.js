@@ -89,10 +89,10 @@ bot.on("message", message=>{
             message.channel.send("Type !commands for a list of commands. If you are still having trouble, join the support discord.")
         break;
         
+        //disable member leave message
         case "disableleavemessage":
             leavemessage=false;
             message.channel.send("Leave message disabled")
-            message.channel.send(leavemessage)
         break;
 
     }
