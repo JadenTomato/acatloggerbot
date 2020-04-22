@@ -5,6 +5,8 @@ const token="Njg5NDk0ODAyNTMzOTc0MTUz.XpVKtQ.tyS-l74eIedygDk0sBcH1oVONdk";
  
 const PREFIX="!";
 var leavemessage="true";
+var deletemessage="true";
+var editmessage="true";
 
 bot.on("ready", ()=>{
     console.log("Bot on!");
@@ -28,7 +30,8 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         .setFooter("This is an embed for updating messages");
  
         let loggingChannel=newMessage.guild.channels.cache.find(channel=>channel.name === "text-logs")
-        if(!loggingChannel) return;
+        if(!loggingChannel||editmessage=false)
+         return;
  
         loggingChannel.send(logEmbed);
 })
@@ -46,7 +49,7 @@ bot.on("messageDelete", async message =>{
     .addField("Deleted At:", message.createdAt);
  
     let logChannel=message.guild.channels.cache.find(channel=>channel.name==="text-logs")
-    if(!logChannel){
+    if(!logChannel||deletemessage=false){
         return;
     }
  
@@ -81,7 +84,7 @@ bot.on("message", message=>{
 
         //commands list message
         case "commands":
-            message.channel.send("List of commands: !setup, !ping, !developer")
+            message.channel.send("List of commands: !setup, !ping, !developer, !help, !disableleavemessage, !disabledeletedmessage, !disableeditedmessage")
         break;
 
         //help message
@@ -95,6 +98,35 @@ bot.on("message", message=>{
             message.channel.send("Leave message disabled")
         break;
 
+        //disable deleted message
+        case "disabledeletedmessage":
+            deletemessage=false;
+            message.channel.send("Deleted message logs disabled")
+        break;
+
+        //disable edited message
+        case "disableeditedmessage":
+            editmessage=false;
+            message.channel.send("Edited message logs disabled")
+        break;
+
+        //enable member leave message
+        case "enableleavemessage":
+            leavemessage=true;
+            message.channel.send("Leave message enabled")
+        break;
+
+        //enable deleted message
+        case "enabledeletedmessage":
+            deletemessage=true;
+            message.channel.send("Deleted message logs enabled")
+        break;
+
+        //enable edited message
+        case "enableeditedmessage":
+            editmessage=true;
+            message.channel.send("Edited message logs enabled")
+        break;
     }
 })
 
