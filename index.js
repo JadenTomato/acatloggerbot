@@ -93,37 +93,37 @@ bot.on("message", message=>{
         break;
         
         //disable member leave message
-        case "disableleavemessage":
+        case "disable leavemessage":
             leavemessage=false;
             message.channel.send("Leave message disabled")
         break;
 
         //disable deleted message
-        case "disabledeletedmessage":
+        case "disable deletedmessage":
             deletemessage=false;
             message.channel.send("Deleted message logs disabled")
         break;
 
         //disable edited message
-        case "disableeditedmessage":
+        case "disable editedmessage":
             editmessage=false;
             message.channel.send("Edited message logs disabled")
         break;
 
         //enable member leave message
-        case "enableleavemessage":
+        case "enable leavemessage":
             leavemessage=true;
             message.channel.send("Leave message enabled")
         break;
 
         //enable deleted message
-        case "enabledeletedmessage":
+        case "enable deletedmessage":
             deletemessage=true;
             message.channel.send("Deleted message logs enabled")
         break;
 
         //enable edited message
-        case "enableeditedmessage":
+        case "enable editedmessage":
             editmessage=true;
             message.channel.send("Edited message logs enabled")
         break;
