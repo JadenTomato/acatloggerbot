@@ -84,7 +84,7 @@ bot.on("message", message=>{
 
         //commands list message
         case "commands":
-            message.channel.send("List of commands: !setup, !ping, !developer, !help, !disableleavemessage, !disabledeletedmessage, !disableeditedmessage")
+            message.channel.send("List of commands: !setup, !ping, !developer, !help, !disableleavemessage, !disabledeletedmessage, !disableeditedmessage, !enableleavemessage, !enabledeletemessage, !enableeditedmessage")
         break;
 
         //help message
@@ -126,6 +126,16 @@ bot.on("message", message=>{
         case "enableeditedmessage":
             editmessage=true;
             message.channel.send("Edited message logs enabled")
+        break;
+
+        //enable message
+        case "enable":
+            message.channel.send("enable(setting)")
+        break;
+        
+        //disable message
+        case "disable":
+            message.channel.send("disable(setting)")
         break;
     }
 })
