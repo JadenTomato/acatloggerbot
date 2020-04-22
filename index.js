@@ -30,7 +30,7 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         .setFooter("This is an embed for updating messages");
  
         let loggingChannel=newMessage.guild.channels.cache.find(channel=>channel.name === "text-logs")
-        if(!loggingChannel||editmessage=false)
+        if(!loggingChannel||editmessage==false)
          return;
  
         loggingChannel.send(logEmbed);
@@ -49,7 +49,7 @@ bot.on("messageDelete", async message =>{
     .addField("Deleted At:", message.createdAt);
  
     let logChannel=message.guild.channels.cache.find(channel=>channel.name==="text-logs")
-    if(!logChannel||deletemessage=false){
+    if(!logChannel||deletemessage==false){
         return;
     }
  
