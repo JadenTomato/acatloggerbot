@@ -10,7 +10,7 @@ var editmessage="true";
 
 bot.on("ready", ()=>{
     console.log("Bot on!");
-    client.user.setActivity("!setup"); 
+    client.user.setStatus('ACAT Logger', '!setup') 
 })
  
 //message edit log
