@@ -10,7 +10,7 @@ var editmessage="true";
 
 bot.on("ready", ()=>{
     console.log("Bot on!");
-    client.user.setGame("!setup");
+    bot.user.setGame("!setup");
 })
  
 //message edit log
