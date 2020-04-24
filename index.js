@@ -10,6 +10,7 @@ var editmessage="true";
 
 bot.on("ready", ()=>{
     console.log("Bot on!");
+    client.user.setActivity("!setup"); 
 })
  
 //message edit log
@@ -69,7 +70,7 @@ bot.on("message", message=>{
  
         //setup message
         case "setup":
-            message.channel.send("Create a channel named: text-logs. This is where message updates will be sent to.")
+            message.channel.send("Create a channel named: text-logs. This is where message updates will be sent to. Use !commands for a list of helpful commands.")
         break;
  
         //developer message
