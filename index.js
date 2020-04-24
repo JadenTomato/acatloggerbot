@@ -135,6 +135,9 @@ bot.on("message", message=>{
         
         //disable message
         case "disable":
+            if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+            else
             message.channel.send("disable(setting)")
         break;
     }
