@@ -94,50 +94,78 @@ bot.on("message", message=>{
         
         //disable member leave message
         case "disableleavemessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             leavemessage=false;
             message.channel.send("Leave message disabled")
+        }
         break;
+        
 
         //disable deleted message
         case "disabledeletedmessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             deletemessage=false;
             message.channel.send("Deleted message logs disabled")
+        }
         break;
 
         //disable edited message
         case "disableeditedmessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             editmessage=false;
             message.channel.send("Edited message logs disabled")
+        }
         break;
 
         //enable member leave message
         case "enableleavemessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             leavemessage=true;
             message.channel.send("Leave message enabled")
+        }
         break;
 
         //enable deleted message
         case "enabledeletedmessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             deletemessage=true;
             message.channel.send("Deleted message logs enabled")
+        }
         break;
 
         //enable edited message
         case "enableeditedmessage":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else{
             editmessage=true;
             message.channel.send("Edited message logs enabled")
+        }
         break;
 
         //enable message
         case "enable":
+        if(!message.member.hasPermission("ADMINISTRATOR"))
+            message.channel.send("You do not have permission to do this!")
+        else
             message.channel.send("enable(setting)")
         break;
         
         //disable message
         case "disable":
-            if(!message.member.hasPermission("ADMINISTRATOR"))
+        if(!message.member.hasPermission("ADMINISTRATOR"))
             message.channel.send("You do not have permission to do this!")
-            else
+        else
             message.channel.send("disable(setting)")
         break;
     }
