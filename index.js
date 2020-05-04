@@ -45,7 +45,7 @@ bot.on("messageDelete", async message =>{
     .setColor("RANDOM")
     .setThumbnail(message.avatarURL)
     .addField("Message:", message)
-    .addField("Deleted By:", message.author.tag)
+    .addField("Sent By:", message.author.tag)
     .addField("Deleted In:", message.channel)
     .addField("Deleted At:", message.createdAt);
  
