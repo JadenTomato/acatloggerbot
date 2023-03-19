@@ -6,4 +6,4 @@ The bot's vision was to utilize Discord's bot support through NodeJS, Python, an
 The original intention of the bot was to offer an alternative as mainstream logging bots were unreliable and commonly offline. 
 Unfortunately, the bot is now offline as the cloud computing service has declined free use. 
 
-*Note that the token viewed in the source code is no longer active, as is the bot.
+*Note that any token value in the source code is no longer active, as is the bot.*
