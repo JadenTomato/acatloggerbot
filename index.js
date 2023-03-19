@@ -1,7 +1,7 @@
 const Discord=require("discord.js");
 const bot=new Discord.Client();
  
-const token="Njg5NDk0ODAyNTMzOTc0MTUz.XpVKtQ.tyS-l74eIedygDk0sBcH1oVONdk";
+const token="";
  
 const PREFIX="!";
 var leavemessage="true";
